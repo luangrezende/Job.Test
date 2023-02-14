@@ -2,18 +2,16 @@
 using Rover.Service.Interface;
 using Rover.Shared.Enums;
 using Rover.Shared.Helpers;
-using Rover.Shared.Helpers.Interfaces;
 using System;
 
 namespace Rover.Service
 {
     public class RoverService : IRoverService
     {
-        public IRoverHelper _roverHelper;
+        private readonly RoverHelper _roverHelper = new RoverHelper();
 
         public Rovers GenerateRover(string roverCoordinate, string roverCommand, Pleateau plato)
         {
-            _roverHelper = new RoverHelper();
             int xCoordinate = -1;
             int yCoordinate = -1;
             Direction direction = Direction.Undefined;

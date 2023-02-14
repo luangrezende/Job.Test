@@ -6,11 +6,11 @@ namespace Rover.Shared.Helpers
 {
     public class RoverHelper
     {
+        private readonly EnumHelper _enumHelper = new EnumHelper();
+
         public bool CalculateCoordinates(string value, ref int xCoordinateLength, ref int yCoordinateLength, ref Direction direction)
         {
             bool result = false;
-
-            var _enumHelper = new EnumHelper();
 
             if (!string.IsNullOrEmpty(value))
             {

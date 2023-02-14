@@ -1,6 +1,4 @@
-﻿using Rover.Shared.Helpers.Interfaces;
-
-namespace Rover.Shared.Helpers
+﻿namespace Rover.Shared.Helpers
 {
     public class PlateauHelper
     {
