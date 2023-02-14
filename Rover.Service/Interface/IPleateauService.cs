@@ -2,7 +2,7 @@
 
 namespace Rover.Service.Interface
 {
-    public interface IPleateauService
+    public interface IPlateauService
     {
         Pleateau GeneratePlateau(string value);
     }

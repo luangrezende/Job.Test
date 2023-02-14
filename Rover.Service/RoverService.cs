@@ -10,7 +10,7 @@ namespace Rover.Service
     {
         private readonly RoverHelper _roverHelper = new RoverHelper();
 
-        public Rovers GenerateRover(string roverCoordinate, string roverCommand, Pleateau plato)
+        public Rovers GenerateRover(string roverCoordinate, string roverCommand, Pleateau pleateau)
         {
             int xCoordinate = -1;
             int yCoordinate = -1;
@@ -28,7 +28,7 @@ namespace Rover.Service
                     Direction = direction
                 };
 
-                bool pointResult = _roverHelper.CalculateRoverPoint(plato, entity);
+                bool pointResult = _roverHelper.CalculateRoverPoint(pleateau, entity);
 
                 if (pointResult)
                 {

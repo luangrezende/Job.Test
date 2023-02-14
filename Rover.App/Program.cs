@@ -6,25 +6,25 @@ namespace Rover.App
 {
     class Program
     {
-        public static IPleateauService? _platoService;
+        public static IPlateauService? _plateauService;
         public static IRoverService? _roverService;
         public static int roverCount = 1;
 
         static void Main(string[] args)
         {
-            _platoService = new PlateauService();
+            _plateauService = new PlateauService();
             _roverService = new RoverService();
             List<Rovers> roverList = new();
-            Pleateau platoEntity;
+            Pleateau plateauEntity;
 
             while (true)
             {
                 Console.Write("Digite as dimensoes: ");
-                string? platoWidthHeight = Console.ReadLine();
+                string? plateauWidthHeight = Console.ReadLine();
 
-                platoEntity = _platoService.GeneratePlateau(platoWidthHeight);
+                plateauEntity = _plateauService.GeneratePlateau(plateauWidthHeight);
 
-                if (platoEntity != null)
+                if (plateauEntity != null)
                     break;
                 else
                     Console.WriteLine("Dado invalido. Example: 5 5");
@@ -40,7 +40,7 @@ namespace Rover.App
                     Console.Write("{0}. Comandos Rover: ", roverCount);
                     string? roverCommand = Console.ReadLine();
 
-                    Rovers roverEntity = _roverService.GenerateRover(roverCoordinate, roverCommand, platoEntity);
+                    Rovers roverEntity = _roverService.GenerateRover(roverCoordinate, roverCommand, plateauEntity);
 
                     if (roverEntity != null)
                     {

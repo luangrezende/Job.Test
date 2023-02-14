@@ -4,7 +4,7 @@ using Rover.Shared.Helpers;
 
 namespace Rover.Service
 {
-    public class PlateauService : IPleateauService
+    public class PlateauService : IPlateauService
     {
         public Pleateau GeneratePlateau(string value)
         {
