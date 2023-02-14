@@ -15,7 +15,7 @@ namespace Rover.App
             _plateauService = new PlateauService();
             _roverService = new RoverService();
             List<Rovers> roverList = new();
-            Pleateau plateauEntity;
+            Plateau plateauEntity;
 
             while (true)
             {

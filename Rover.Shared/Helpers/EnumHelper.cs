@@ -3,9 +3,9 @@ using System;
 
 namespace Rover.Shared.Helpers
 {
-    public class EnumHelper
+    public static class EnumHelper
     {
-        public bool DirectionIsDefined(string value)
+        public static bool DirectionIsDefined(string value)
         {
             bool result = false;
 
@@ -17,7 +17,7 @@ namespace Rover.Shared.Helpers
             return result;
         }
 
-        public bool CommandIsDefined(string value)
+        public static bool CommandIsDefined(string value)
         {
             bool result = false;
 

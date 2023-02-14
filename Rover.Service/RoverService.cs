@@ -8,15 +8,13 @@ namespace Rover.Service
 {
     public class RoverService : IRoverService
     {
-        private readonly RoverHelper _roverHelper = new RoverHelper();
-
-        public Rovers GenerateRover(string roverCoordinate, string roverCommand, Pleateau pleateau)
+        public Rovers GenerateRover(string roverCoordinate, string roverCommand, Plateau pleateau)
         {
             int xCoordinate = -1;
             int yCoordinate = -1;
             Direction direction = Direction.Undefined;
 
-            bool result = _roverHelper.CalculateCoordinates(roverCoordinate, ref xCoordinate, ref yCoordinate, ref direction);
+            bool result = RoverHelper.CalculateCoordinates(roverCoordinate, ref xCoordinate, ref yCoordinate, ref direction);
 
             Rovers entity;
             if (result)
@@ -28,11 +26,11 @@ namespace Rover.Service
                     Direction = direction
                 };
 
-                bool pointResult = _roverHelper.CalculateRoverPoint(pleateau, entity);
+                bool pointResult = RoverHelper.CalculateRoverPoint(pleateau, entity);
 
                 if (pointResult)
                 {
-                    bool roverCommandResult = _roverHelper.CalculateCommands(roverCommand);
+                    bool roverCommandResult = RoverHelper.CalculateCommands(roverCommand);
 
                     if (roverCommandResult)
                     {
@@ -69,13 +67,13 @@ namespace Rover.Service
                     switch (item)
                     {
                         case 'L':
-                            _roverHelper.TurnLeft(entity);
+                            RoverHelper.TurnLeft(entity);
                             break;
                         case 'R':
-                            _roverHelper.TurnRight(entity);
+                            RoverHelper.TurnRight(entity);
                             break;
                         case 'M':
-                            _roverHelper.Move(entity);
+                            RoverHelper.Move(entity);
                             break;
                     }
                 }

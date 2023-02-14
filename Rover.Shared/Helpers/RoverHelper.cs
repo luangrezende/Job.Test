@@ -4,11 +4,9 @@ using System;
 
 namespace Rover.Shared.Helpers
 {
-    public class RoverHelper
+    public static class RoverHelper
     {
-        private readonly EnumHelper _enumHelper = new EnumHelper();
-
-        public bool CalculateCoordinates(string value, ref int xCoordinateLength, ref int yCoordinateLength, ref Direction direction)
+        public static bool CalculateCoordinates(string value, ref int xCoordinateLength, ref int yCoordinateLength, ref Direction direction)
         {
             bool result = false;
 
@@ -25,7 +23,7 @@ namespace Rover.Shared.Helpers
                     {
                         if (!string.IsNullOrEmpty(plateaAttributes[2]))
                         {
-                            bool isDefined = _enumHelper.DirectionIsDefined(plateaAttributes[2]);
+                            bool isDefined = EnumHelper.DirectionIsDefined(plateaAttributes[2]);
 
                             if (isDefined)
                             {
@@ -41,7 +39,7 @@ namespace Rover.Shared.Helpers
             return result;
         }
 
-        public bool CalculateRoverPoint(Pleateau pleateau, Rovers rover)
+        public static bool CalculateRoverPoint(Plateau pleateau, Rovers rover)
         {
             bool result = false;
 
@@ -53,17 +51,15 @@ namespace Rover.Shared.Helpers
             return result;
         }
 
-        public bool CalculateCommands(string value)
+        public static bool CalculateCommands(string value)
         {
-            var _enumHelper = new EnumHelper();
-
             bool result = false;
 
             if (!string.IsNullOrEmpty(value))
             {
                 foreach (char item in value)
                 {
-                    result = _enumHelper.CommandIsDefined(item.ToString());
+                    result = EnumHelper.CommandIsDefined(item.ToString());
 
                     if (!result)
                     {
@@ -75,21 +71,21 @@ namespace Rover.Shared.Helpers
             return result;
         }
 
-        public Rovers TurnLeft(Rovers input)
+        public static Rovers TurnLeft(Rovers input)
         {
             input.Direction = (Direction)Enum.ToObject(typeof(Direction), (Convert.ToInt32(input.Direction) + 1) % 4);
             
             return input;
         }
 
-        public Rovers TurnRight(Rovers input)
+        public static Rovers TurnRight(Rovers input)
         {
             input.Direction = (Direction)Enum.ToObject(typeof(Direction), (Convert.ToInt32(input.Direction) + 3) % 4);
 
             return input;
         }
 
-        public Rovers Move(Rovers input)
+        public static Rovers Move(Rovers input)
         {
             switch (input.Direction)
             {

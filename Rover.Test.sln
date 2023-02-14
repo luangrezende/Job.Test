@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rover.Service", "Rover.Serv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rover.Shared", "Rover.Shared\Rover.Shared.csproj", "{A3998C44-E92E-4E40-9ABE-0DB7A83D72A5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rover.Tests", "Rover.Tests\Rover.Tests.csproj", "{77C11C13-280A-483A-8B96-4A6ACDD8E8D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A3998C44-E92E-4E40-9ABE-0DB7A83D72A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3998C44-E92E-4E40-9ABE-0DB7A83D72A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3998C44-E92E-4E40-9ABE-0DB7A83D72A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C11C13-280A-483A-8B96-4A6ACDD8E8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C11C13-280A-483A-8B96-4A6ACDD8E8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C11C13-280A-483A-8B96-4A6ACDD8E8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C11C13-280A-483A-8B96-4A6ACDD8E8D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

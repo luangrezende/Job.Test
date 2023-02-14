@@ -1,6 +1,6 @@
 ﻿namespace Rover.Core
 {
-    public class Pleateau
+    public class Plateau
     {
         public int XCoordinateLength { get; set; }
 

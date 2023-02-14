@@ -4,6 +4,6 @@ namespace Rover.Service.Interface
 {
     public interface IPlateauService
     {
-        Pleateau GeneratePlateau(string value);
+        Plateau GeneratePlateau(string value);
     }
 }

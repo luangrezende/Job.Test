@@ -6,16 +6,15 @@ namespace Rover.Service
 {
     public class PlateauService : IPlateauService
     {
-        public Pleateau GeneratePlateau(string value)
+        public Plateau GeneratePlateau(string value)
         {
-            Pleateau entity = null;
-            var _pleteauHelper = new PlateauHelper();
+            Plateau entity = null;
             int xCoordinate = -1, yCoordinate = -1;
 
-            bool result = _pleteauHelper.PlateauCoordinateCalculate(value, ref xCoordinate, ref yCoordinate);
+            bool result = PlateauHelper.PlateauCoordinateCalculate(value, ref xCoordinate, ref yCoordinate);
             if (result)
             {
-                entity = new Pleateau()
+                entity = new Plateau()
                 {
                     XCoordinateLength = xCoordinate,
                     YCoordinateLength = yCoordinate

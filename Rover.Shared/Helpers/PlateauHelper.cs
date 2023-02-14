@@ -1,8 +1,8 @@
 ﻿namespace Rover.Shared.Helpers
 {
-    public class PlateauHelper
+    public static class PlateauHelper
     {
-        public bool PlateauCoordinateCalculate(string value, ref int xCoordinate, ref int yCoordinate)
+        public static bool PlateauCoordinateCalculate(string value, ref int xCoordinate, ref int yCoordinate)
         {
             bool result = false;
 
