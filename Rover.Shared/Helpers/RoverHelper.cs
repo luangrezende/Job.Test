@@ -1,19 +1,16 @@
 ﻿using Rover.Core;
 using Rover.Shared.Enums;
-using Rover.Shared.Helpers.Interfaces;
 using System;
 
 namespace Rover.Shared.Helpers
 {
-    public class RoverHelper : IRoverHelper
+    public class RoverHelper
     {
-        private IEnumHelper _enumHelper;
-
         public bool CalculateCoordinates(string value, ref int xCoordinateLength, ref int yCoordinateLength, ref Direction direction)
         {
             bool result = false;
 
-            _enumHelper = new EnumHelper();
+            var _enumHelper = new EnumHelper();
 
             if (!string.IsNullOrEmpty(value))
             {
@@ -58,7 +55,7 @@ namespace Rover.Shared.Helpers
 
         public bool CalculateCommands(string value)
         {
-            _enumHelper = new EnumHelper();
+            var _enumHelper = new EnumHelper();
 
             bool result = false;
 

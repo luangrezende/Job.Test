@@ -12,7 +12,7 @@ namespace Rover.App
 
         static void Main(string[] args)
         {
-            _platoService = new platoService();
+            _platoService = new PlateauService();
             _roverService = new RoverService();
             List<Rovers> roverList = new();
             Pleateau platoEntity;
@@ -22,7 +22,7 @@ namespace Rover.App
                 Console.Write("Digite as dimensoes: ");
                 string? platoWidthHeight = Console.ReadLine();
 
-                platoEntity = _platoService.GerarPlato(platoWidthHeight);
+                platoEntity = _platoService.GeneratePlateau(platoWidthHeight);
 
                 if (platoEntity != null)
                     break;

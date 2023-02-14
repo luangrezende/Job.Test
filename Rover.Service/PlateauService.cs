@@ -1,20 +1,15 @@
 ﻿using Rover.Core;
 using Rover.Service.Interface;
 using Rover.Shared.Helpers;
-using Rover.Shared.Helpers.Interfaces;
 
 namespace Rover.Service
 {
-    public class platoService : IPleateauService
+    public class PlateauService : IPleateauService
     {
-        public IPlatoHelper _pleteauHelper;
-
-        public Pleateau GerarPlato(string value)
+        public Pleateau GeneratePlateau(string value)
         {
             Pleateau entity = null;
-
-            _pleteauHelper = new PlateauHelper();
-
+            var _pleteauHelper = new PlateauHelper();
             int xCoordinate = -1, yCoordinate = -1;
 
             bool result = _pleteauHelper.PlateauCoordinateCalculate(value, ref xCoordinate, ref yCoordinate);

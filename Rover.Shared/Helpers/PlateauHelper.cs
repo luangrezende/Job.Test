@@ -2,7 +2,7 @@
 
 namespace Rover.Shared.Helpers
 {
-    public class PlateauHelper : IPlatoHelper
+    public class PlateauHelper
     {
         public bool PlateauCoordinateCalculate(string value, ref int xCoordinate, ref int yCoordinate)
         {

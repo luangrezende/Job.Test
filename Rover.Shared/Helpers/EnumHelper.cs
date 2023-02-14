@@ -1,10 +1,9 @@
 ﻿using Rover.Shared.Enums;
-using Rover.Shared.Helpers.Interfaces;
 using System;
 
 namespace Rover.Shared.Helpers
 {
-    public class EnumHelper : IEnumHelper
+    public class EnumHelper
     {
         public bool DirectionIsDefined(string value)
         {
