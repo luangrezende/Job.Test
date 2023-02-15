@@ -8,12 +8,12 @@
 
             if (!string.IsNullOrEmpty(value))
             {
-                string[] plateaAttributes = value.Trim().Split(' ');
+                string[] plateauAttributes = value.Trim().Split(' ');
 
-                if (plateaAttributes.Length == 2)
+                if (plateauAttributes.Length == 2)
                 {
-                    bool xCoordinateResult = int.TryParse(plateaAttributes[0], out xCoordinate);
-                    bool yCoordinateResult = int.TryParse(plateaAttributes[1], out yCoordinate);
+                    bool xCoordinateResult = int.TryParse(plateauAttributes[0], out xCoordinate);
+                    bool yCoordinateResult = int.TryParse(plateauAttributes[1], out yCoordinate);
 
                     if (xCoordinateResult && yCoordinateResult)
                     {

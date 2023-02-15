@@ -19,33 +19,32 @@ namespace Rover.Tests
         [Test]
         public void GenerateRoverTestMethod()
         {
-            Plateau plateauEntity = _pleteauService.GeneratePlateau("5 5");
+            Plateau plateauEntity = _pleteauService.BuildPlateau("5 5");
 
-            Rovers rovers = _roverService.GenerateRover("1  2 N", "LMLMLMLMMMM", plateauEntity);
+            Rovers rovers = _roverService.BuildRover("1  2 N", "LMLMLMLMMMM", plateauEntity);
             Assert.IsNull(rovers);
 
-            rovers = _roverService.GenerateRover("1 2 N", "LML132MLMLMM", plateauEntity);
+            rovers = _roverService.BuildRover("1 2 N", "LML132MLMLMM", plateauEntity);
             Assert.IsNull(rovers);
 
-            rovers = _roverService.GenerateRover("1 2 N", "LMLMLMLMM", plateauEntity);
+            rovers = _roverService.BuildRover("1 2 N", "LMLMLMLMM", plateauEntity);
             Assert.IsNotNull(rovers);
         }
 
         [Test]
         public void ExecuteRoverCommandTestMethod()
         {
-            Plateau plateauEntity = _pleteauService.GeneratePlateau("5 5"); 
-
-            Rovers rovers = _roverService.GenerateRover("1 2 N", "L2MLMLMSSLMM1", plateauEntity);
+            Plateau plateauEntity = _pleteauService.BuildPlateau("5 5"); 
+            Rovers rovers = _roverService.BuildRover("1 2 N", "L2MLMLMSSLMM1", plateauEntity);
 
             rovers = _roverService.ExecuteRoverCommand(rovers);
             Assert.IsNull(rovers);
 
-            rovers = _roverService.GenerateRover("1 2  N", "LMLMSLMLMMS", plateauEntity);
+            rovers = _roverService.BuildRover("1 2  N", "LMLMSLMLMMS", plateauEntity);
             rovers = _roverService.ExecuteRoverCommand(rovers);
             Assert.IsNull(rovers);
 
-            rovers = _roverService.GenerateRover("1 2 N", "LMLMLMLMM", plateauEntity);
+            rovers = _roverService.BuildRover("1 2 N", "LMLMLMLMM", plateauEntity);
             rovers = _roverService.ExecuteRoverCommand(rovers);
             Assert.IsNotNull(rovers);
         }

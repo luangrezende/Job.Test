@@ -6,7 +6,7 @@ namespace Rover.Service
 {
     public class PlateauService : IPlateauService
     {
-        public Plateau GeneratePlateau(string value)
+        public Plateau BuildPlateau(string value)
         {
             Plateau entity = null;
             int xCoordinate = -1, yCoordinate = -1;

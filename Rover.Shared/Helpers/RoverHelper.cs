@@ -43,7 +43,8 @@ namespace Rover.Shared.Helpers
         {
             bool result = false;
 
-            if (pleateau.XCoordinateLength >= rover.XCoordinate && pleateau.YCoordinateLength >= rover.YCoordinate)
+            if (pleateau.XCoordinateLength >= rover.XCoordinate 
+                && pleateau.YCoordinateLength >= rover.YCoordinate)
             {
                 result = true;
             }
@@ -62,9 +63,7 @@ namespace Rover.Shared.Helpers
                     result = EnumHelper.CommandIsDefined(item.ToString());
 
                     if (!result)
-                    {
                         break;
-                    }
                 }
             }
 

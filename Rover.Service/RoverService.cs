@@ -8,15 +8,15 @@ namespace Rover.Service
 {
     public class RoverService : IRoverService
     {
-        public Rovers GenerateRover(string roverCoordinate, string roverCommand, Plateau pleateau)
+        public Rovers BuildRover(string roverCoordinate, string roverCommand, Plateau pleateau)
         {
+            Rovers entity;
             int xCoordinate = -1;
             int yCoordinate = -1;
             Direction direction = Direction.Undefined;
 
             bool result = RoverHelper.CalculateCoordinates(roverCoordinate, ref xCoordinate, ref yCoordinate, ref direction);
 
-            Rovers entity;
             if (result)
             {
                 entity = new Rovers()
@@ -38,7 +38,7 @@ namespace Rover.Service
                     }
                     else
                     {
-                        Console.WriteLine("Os comandos inseridos não são válidos para o rover! Basta digitar L, R ou M.");
+                        Console.WriteLine("Os comandos inseridos não são válidos para o rover! É permitido digitar apenas L, R ou M.");
                         return null;
                     }
                 }
@@ -79,7 +79,6 @@ namespace Rover.Service
                 }
 
             }
-           
 
             return entity;
         }
